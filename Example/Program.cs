@@ -3,7 +3,7 @@ using Business_Credentialing_Package.Model;
 using System.Text.Json;
 using System.Text.Json.Nodes;
 
-var businessCredentialingPackageClient = new BusinessCredentialingPackageClient("Q6AMtPjRVZvGTPqAxy1q2fgF4E0q0Hgd", "UJfttT8pSVGEBx0D", EnvironmentType.Sandbox);
+var businessCredentialingPackageClient = new BusinessCredentialingPackageClient("You_client_id", "You_client_secret", EnvironmentType.Sandbox);
 JsonObject report, archiveReport;
 Console.WriteLine("Test ProfessionalLicenseSearchClient:");
 Console.WriteLine("Test GetReport:");
@@ -21,6 +21,7 @@ var professionalLicenseSearchRequestModel = JsonSerializer.Serialize<Professiona
 report = businessCredentialingPackageClient.ProfessionalLicenseSearchClient.GetReport(professionalLicenseSearchRequestModel);
 Console.WriteLine(report.ToString());
 Console.WriteLine("Test GetArchiveReport:");
+
 archiveReport = businessCredentialingPackageClient.ProfessionalLicenseSearchClient.GetArchiveReport("{C76E01F3-8D6F-4D9D-B0F9-CD33ECE09F58}");
 Console.WriteLine(archiveReport.ToString());
 
